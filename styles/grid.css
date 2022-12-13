@@ -1,0 +1,43 @@
+.gridShow {
+  background: repeating-linear-gradient(
+    180deg,
+    hsla(210, 70%, 50%, 0.35),
+    hsla(210, 70%, 50%, 0.35) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+}
+.gridShow .app {
+  position: relative;
+}
+.gridShow .gridView {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  padding: 0 1.25rem;
+  display: grid;
+}
+@media (max-width: 767px) {
+  .gridShow .gridView {
+    min-width: 320px;
+    max-width: 767px;
+    grid-template-columns: 1fr;
+  }
+  .gridShow .gridColumn {
+    background-color: rgba(255, 255, 0, 0.15);
+  }
+}
+@media (min-width: 768px) {
+  .gridShow .gridView {
+    min-width: 768px;
+    max-width: 1024px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.25rem;
+  }
+  .gridShow .gridColumn {
+    background-color: rgba(255, 0, 0, 0.15);
+  }
+}
