@@ -24,5 +24,39 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: url(./../images/webcafe-logo@2x.png) no-repeat 0 0/100% 100%;
+  background: url(./../images/webcafe-logo.png) no-repeat 0 0/100% 100%;
+}
+
+/* 공통 멤버서비스 */
+.memberOnly {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+/* 모바일 디바이스 (Mobile Device) */
+@media (min-width: 320px) and (max-width: 767px) {
+  /* 모바일 헤더 */
+  .appHeader {
+    background: var(--primary-color);
+    color: var(--white);
+  }
+
+  /* 모바일 멤버서비스 */
+  .memberOnly {
+    order: -1;
+    font-size: var(--text-sm);
+  }
+}
+
+/* 고해상도 배경이미지 미디어쿼리 */
+@media (-webkit-min-device-pixel-ratio: 2),
+  (min--moz-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .logo__link {
+    background-image: url(./../images/webcafe-logo@2x.png);
+  }
 }
