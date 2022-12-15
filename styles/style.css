@@ -34,8 +34,59 @@
   justify-content: flex-end;
 }
 
+/* 공통 검색 폼 */
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.searchForm__group {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.searchForm__group .formInput {
+  margin-right: var(--spacing-xs);
+}
+
+.searchForm__group .formInput__input {
+  width: 100%;
+  height: 2rem;
+  border: 1px solid var(--silver);
+  background: var(--white);
+  border-radius: 0.25rem;
+  padding: var(--spacing-sxxs) var(--spacing-sm);
+}
+
+.button {
+  cursor: pointer;
+  height: 2rem;
+  border-radius: 0.25rem;
+  padding: var(--spacing-sxxs) var(--spacing-sm);
+  flex: 0 0 auto;
+  font-size: var(--text-sm);
+}
+
+.button--none {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.button--fill {
+  background: var(--secondary-color);
+  color: var(--white);
+  border: 0;
+}
+
+.button--outline {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 1px solid currentColor;
+}
+
 /* 모바일 디바이스 (Mobile Device) */
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 768px) {
   /* 모바일 헤더 */
   .appHeader {
     background: var(--primary-color);
@@ -46,6 +97,38 @@
   .memberOnly {
     order: -1;
     font-size: var(--text-sm);
+  }
+
+  /* 모바일 검색 폼 */
+  .searchForm__group .formInput {
+    flex-grow: 1;
+  }
+}
+
+/* 데스크탑 디바이스 (Desktop Device) */
+@media (min-width: 769px) {
+  /* 데스크탑 헤더 */
+  .appHeader {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: gold;
+  }
+
+  /* 데스크탑 로고 */
+  .logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* 데스크탑 검색 폼 */
+  .searchForm__group {
+    justify-content: flex-end;
+  }
+
+  .searchForm__group .formInput {
+    width: 25rem;
   }
 }
 
