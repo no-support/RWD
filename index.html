@@ -18,7 +18,185 @@
 </head>
 
 <body>
-  
+  <header class="appHeader">
+    <h1 class="logo">
+      <a href="./main.html" class="logo__link" aria-label="Web Cafe"></a>
+    </h1>
+    <ul class="memberOnly">
+      <li><a href="/">로그인</a></li>
+      <li><span class="divider" aria-hidden="true">ㅣ</span><a href="/">회원가입</a></li>
+      <li><span class="divider" aria-hidden="true">ㅣ</span><a href="/">커뮤니티</a></li>
+    </ul>
+    <form action="https://formspree.io/seulbinim@gmail.com" method="POST" class="searchForm">
+      <fieldset>
+        <legend>검색</legend>
+        <div class="searchForm__group">
+          <div class="formInput">
+            <label for="search" class="a11yHidden formInput__label">검색어</label>
+            <input id="search" class="formInput__input" type="search" required placeholder="검색어를 입력하세요." name="search" />
+          </div>
+          <button type="submit" class="button button--primary button--fill">검색</button>
+        </div>
+      </fieldset>
+    </form>
+    <div class="buttonWrapper">
+      <button class="button--none button--burger" aria-label="메뉴 열기">
+        <span class="button--burgerBarTop"></span> 
+        <span class="button--burgerBarMiddle"></span> 
+        <span class="button--burgerBarBottom"></span>
+      </button>
+    </div>
+  </header>
+  <nav class="appNavigation menu">
+    <h2 class="a11yHidden">메인 메뉴</h2>
+    <ul class="menu__list">
+      <li class="menu__item"><a href="/" class="menu__link">HTML에 대해</a></li>
+      <li class="menu__item"><a href="/" class="menu__link">CSS에 대해</a></li>
+      <li class="menu__item"><a href="/" class="menu__link">웹표준/웹접근성</a></li>
+      <li class="menu__item"><a href="/" class="menu__link">묻고 답하기</a></li>
+      <li class="menu__item"><a href="/" class="menu__link">자료실</a></li>
+    </ul>
+  </nav>
+  <main class="appMain">
+    <section class="book">
+      <h2 class="book__title sprite spriteBook">
+        추천서적<span class="book__enTitle accentBook">Recommend Book</span>
+      </h2>
+      <figure class="book__cover">
+        <img src="./assets/images/book_rwd.jpg" alt="" class="book__coverImage" aria-labelledby="book__coverCaption" />
+        <figcaption id="book__coverCaption" class="book__coverCaption">반응형웹 핵심 가이드북</figcaption>
+      </figure>
+      <dl class="book__info">
+        <dt>저자</dt>
+        <dd>김데레사</dd>
+        <dt class="a11yHidden">평점</dt>
+        <dd class="accentBook ratingStar" aria-label="5점 만점에 4점"><span aria-hidden="true">★★★★☆</span></dd>
+      </dl>
+      <p class="book__summary">반응형웹 디자인을 위한 핵심 내용을 다루고 있으며 미디어쿼리, 유연한 레이아웃, 반응형 이미지 기법을 학습할 수 있다. 모바일 및 다양한 해상도에 대응이 가능한 웹디자인을 이 책으로 시작해 보자!</p>
+    </section>
+    <section class="news">
+      <h2 class="news__title sprite spriteNews">
+        새소식 <span class="news__enTitle accentNews">WebCafe News</span></h2>
+      <figure class="news__videoContainer">
+        <video class="news__video" poster="./assets/media/poster.jpg" controls>
+          <source src="./assets/media/stories.mp4" type="video/mp4" />
+          <track src="./assets/media/stories-en.vtt" kind="captions" srclang="en" label="English Caption" />
+        </video>
+        <!-- <div class="iframeWrapper iframeRatio-16-9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/554aOV9iV7s" allowfullscreen></iframe>
+        </div> -->
+        <figcaption class="a11yHidden">구글 개발자 이야기</figcaption>
+      </figure>
+      <p class="news__summary">
+        구글플레이는 다양한 분야에서 활약하고 있는 국내 개발사들을 모시고 직접 이야기를 나눠보는
+        ‘구글플레이 개발자와의 대화’ 행사를 정기적으로 개최할 예정입니다. 오늘 3월 29일(수) 구글 캠퍼스 서울에서 열린 첫 번째
+        ‘구글플레이 개발자와의 대화’는 ‘해외에서 빵터진 한국 앱'을 주제로 진행됐는데요, 국내 앱 시장은 물론 글로벌 시장에서도 주목
+        받으며 글로벌 진출의 본보기가 되고 있는 개발사 세 곳과 함께 했습니다.
+      </p>
+      <time class="news__date" datetime="2022-07-21T14:03:23">
+        <i class="far fa-calendar-alt accentNews" aria-hidden="true"></i>2022.07.21
+      </time>
+    </section>
+    <section class="board">
+      <h2 class="board__title sprite spriteBoard">
+        게시판<span class="board__enTitle accentBoard">WebCafe Board</span>
+      </h2>
+      <ul class="board__list">
+        <li class="board__item">
+          <a href="/" class="board__link">
+            <i class="far fa-dot-circle accentBoard" aria-hidden="hidden"></i>HTML5 표준 명세서를 읽는 방법
+          </a> 
+          <time class="board__date" datetime="2022-07-21T11:24:30">2022-07-21</time>
+        </li>
+        <li class="board__item">
+          <a href="/" class="board__link">
+            <i class="far fa-dot-circle accentBoard" aria-hidden="hidden"></i>CSS를 활용한 애니메이션
+          </a> 
+          <time class="board__date" datetime="2022-07-21T11:24:30">2022-07-21</time>
+        </li>
+        <li class="board__item">
+          <a href="/" class="board__link">
+            <i class="far fa-dot-circle accentBoard" aria-hidden="hidden"></i>프론트엔드 프레임워크 전격 해부
+          </a> 
+          <time class="board__date" datetime="2022-07-21T11:24:30">2022-07-21</time>
+        </li>
+        <li class="board__item">
+          <a href="/" class="board__link">
+            <i class="far fa-dot-circle accentBoard" aria-hidden="hidden"></i>웹표준 그리고 정보접근성에 대하여
+          </a> 
+          <time class="board__date" datetime="2022-07-21T11:24:30">2022-07-21</time>
+        </li>
+        <li class="board__item">
+          <a href="/" class="board__link">
+            <i class="far fa-dot-circle accentBoard" aria-hidden="hidden"></i> 웹카페 유튜브 라이브 참여는 오늘 자정까지 메일로 신청 가능
+          </a> 
+          <time class="board__date" datetime="2022-07-21T11:24:30">2022-07-21</time>
+        </li>
+      </ul>
+      <a href="/" title="게시판" class="board__more">
+        <i class="far fa-plus-square accentBoard" aria-hidden="hidden"></i>더보기
+      </a>
+    </section>
+    <section class="favorite">
+      <h2 class="favorite__title sprite spriteFavorite">
+        인기 사이트<span class="favorite__enTitle accentFavorite">Favorite Site</span>
+      </h2>
+      <ol class="favorite__list">
+        <li class="favorite__item">
+          <a class="favorite__link" href="http://ko.learnlayout.com/" target="_blank" data-tooltip="레이아웃을 배우자" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt accentFavorite" aria-hidden="true"></i> Learn CSS Layout
+          </a>
+        </li>
+        <li class="favorite__item">
+          <a class="favorite__link" href="http://flexboxfroggy.com/#ko" target="_blank" data-tooltip="게이머처럼 Flex" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt accentFavorite" aria-hidden="true"></i> Flexbox Froggy
+          </a>
+        </li>
+        <li class="favorite__item">
+          <a class="favorite__link" href="http://cssgridgarden.com/#ko" target="_blank" data-tooltip="농장주 되기 Grid" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt accentFavorite" aria-hidden="true"></i> CSS Grid Garden
+          </a>
+        </li>
+        <li class="favorite__item">
+          <a class="favorite__link" href="https://developer.mozilla.org/ko/" target="_blank" data-tooltip="최고의 웹교과서 MDN" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt accentFavorite" aria-hidden="true"></i> MDN Web Docs
+          </a>
+        </li>
+      </ol>
+    </section>
+    <article class="twitter">
+      <h2 class="twitter__title sprite spriteTwitter">
+        트위터<span class="twitter__enTitle accentTwitter">WebCafe Twitter</span>
+      </h2>
+      <div class="twitter__container">
+        <dl class="twitter__userInfo">
+          <dt class="a11yHidden">사용자 이름</dt>
+          <dd class="twitter__userName">김데레사</dd>
+          <dt class="a11yHidden">사용자 ID</dt>
+          <dd class="twitter__userId accentTwitter">
+            <a href="/" target="_blank" title="트위터 계정으로 이동" rel=" noopener noreferrer">@seulbinim</a>
+          </dd>
+        </dl>
+        <figure class="twitter__userProfile">
+          <img src="./images/hero.jpg" alt="" class="twitter__userProfileImage" />
+        </figure>
+        <p class="twitter__summary">
+          웹표준 핵심 가이드북 개정판 출시 기념으로 세미나를 준비했습니다. 참석을
+          원하시는 분들은 페이스북과 트위터 그리고 유튜브 채널을 통해 문의주시기 바랍니다.
+        </p>
+        <time class="twitter__date" datetime="2021-07-21T15:03:25">
+          <i class="far fa-clock accentTwitter" aria-hidden="true"></i>일주일전
+        </time>
+      </div>
+    </article>
+  </main>
+  <footer class="appFooter">
+    <address class="address">
+      <span>서울 서초구 사평대로53길 30 반포엠 203호</span>
+      <span>이메일: <a class="address__link" href="mailto:seulbinim@gmail.com?subject=문의사항">seulbinim@gmail.com</a></span>
+    </address>
+    <small class="copyright">Copyright since &copy; 2010 by Web Cafe CORPORATION ALL RIGHTS RESERVED.</small>
+  </footer>
 </body>
 
 </html>
