@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+/* float로도 가능 */
+/* 모든 디바이스 */
+.container {
+  background: silver;
+  border: 1px solid red;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1.5rem;
+  /* gap: 사이의 마진 개념이라 width에 더해짐 */
+  /* gap:24px; */
+  /* row-gap: 24px; */
+  /* flex에선 마진 병합 현상 없음 */
+  padding: 12px;
+}
+div[class*="group"] {
+  width: 100%;
+  height: 50px;
+  margin: 12px 0;
+  padding:  0 12px;
+}
+/* 768px 이상일 때 */
+@media (min-width: 768px) {
+  div[class*="group"] {
+    width: 50%;
+    height: 100px;
+  }
+}
+/* 1280px 이상일 때 */
+@media (min-width: 1280px) {
+  div[class*="group"] {
+    width: 25%;
+    height: 200px;
+  }
+}
+.group1 {
+  background: gold;
+}
+.group2 {
+  background: pink;
+}
+.group3 {
+  background: lightgreen;
+}
+.group4 {
+  background: skyblue;
+}
+.group5 {
+  background: salmon;
+}
+.group6 {
+  background: violet;
+}
+.group7 {
+  background: aquamarine;
+}
+.group8 {
+  background: lightseagreen;
+}
+.group9 {
+  background: MediumPurple;
+}
+.group10 {
+  background: MidnightBlue;
+}
+.group11 {
+  background: Olive;
+}
+.group12 {
+  background: SandyBrown;
+}
