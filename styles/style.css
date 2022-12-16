@@ -104,52 +104,65 @@ input[type="search"] {
     flex-grow: 1;
   }
 
-  /* 모바일 메뉴 제어 버튼 시작 */
+  /* 모바일 메인메뉴 제어버튼 */
   .buttonWrapper {
-    background-color: gold;
+    padding: var(--spacing-xxs);
     overflow: hidden;
+    position: absolute;
+    top: 3.75rem;
+    right: var(--spacing-lg);
+    transform: translate(-0.25rem, -0.25rem);
   }
+
   .button--burger {
-    width: 30px;
-    height: 30px;
-    background-color: blue;
     position: relative;
+    width: 2rem;
+    height: 2rem;
   }
-  [class*="button--burgerBar"] {
-    background: var(--white);
+
+  .button--burger:focus {
+    outline-offset: 2px;
+  }
+
+  .button--burgerBarTop,
+  .button--burgerBarMiddle,
+  .button--burgerBarBottom {
+    position: absolute;
     width: 100%;
     height: 20%;
-    border-radius: 10px;
-    position: absolute;
+    background: var(--white);
+    border-radius: 0.25rem;
     left: 0;
     transition: all 200ms;
   }
+
   .button--burgerBarTop {
     top: 0;
   }
+
   .button--burgerBarMiddle {
     top: 50%;
     transform: translateY(-50%);
   }
+
   .button--burgerBarBottom {
     top: 100%;
     transform: translateY(-100%);
   }
-  .is--active .button--burgerBarTop {
+
+  .button--burger.is--active .button--burgerBarTop {
     top: 50%;
-    transform: translate(0%, -50%) rotate(-45deg);
+    transform: translateY(-50%) rotate(45deg);
   }
-  .is--active .button--burgerBarMiddle {
-    /* translateY(-50%)을 덮어쓰기 때문에 -50% 다시 적는다 */
-    transform: translate(-100%, -50%);
+
+  .button--burger.is--active .button--burgerBarMiddle {
+    transform: translate(-150%, -50%);
   }
-  .is--active .button--burgerBarBottom {
+
+  .button--burger.is--active .button--burgerBarBottom {
     top: 50%;
-    transform: translate(0%, -50%) rotate(45deg);
+    transform: translateY(-50%) rotate(-45deg);
   }
-  
-  
-  /* 모바일 메뉴 제어 버튼 종료 */
 }
 
 /* 데스크탑 디바이스 (Desktop Device) */
@@ -178,10 +191,10 @@ input[type="search"] {
     width: 25rem;
   }
 
-    /* 데스크탑 메인메뉴 제어버튼 */
-    .button--burger {
-      display: none;
-    }
+  /* 데스크탑 메인메뉴 제어버튼 */
+  .button--burger {
+    display: none;
+  }
 }
 
 /* 고해상도 배경이미지 미디어쿼리 */
