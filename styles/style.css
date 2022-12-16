@@ -103,6 +103,53 @@ input[type="search"] {
   .searchForm__group .formInput {
     flex-grow: 1;
   }
+
+  /* 모바일 메뉴 제어 버튼 시작 */
+  .buttonWrapper {
+    background-color: gold;
+    overflow: hidden;
+  }
+  .button--burger {
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    position: relative;
+  }
+  [class*="button--burgerBar"] {
+    background: var(--white);
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    transition: all 200ms;
+  }
+  .button--burgerBarTop {
+    top: 0;
+  }
+  .button--burgerBarMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .button--burgerBarBottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .is--active .button--burgerBarTop {
+    top: 50%;
+    transform: translate(0%, -50%) rotate(-45deg);
+  }
+  .is--active .button--burgerBarMiddle {
+    /* translateY(-50%)을 덮어쓰기 때문에 -50% 다시 적는다 */
+    transform: translate(-100%, -50%);
+  }
+  .is--active .button--burgerBarBottom {
+    top: 50%;
+    transform: translate(0%, -50%) rotate(45deg);
+  }
+  
+  
+  /* 모바일 메뉴 제어 버튼 종료 */
 }
 
 /* 데스크탑 디바이스 (Desktop Device) */
@@ -130,6 +177,11 @@ input[type="search"] {
   .searchForm__group .formInput {
     width: 25rem;
   }
+
+    /* 데스크탑 메인메뉴 제어버튼 */
+    .button--burger {
+      display: none;
+    }
 }
 
 /* 고해상도 배경이미지 미디어쿼리 */

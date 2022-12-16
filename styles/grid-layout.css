@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  background: silver;
+  border: 1px solid red;
+  display: grid;
+  /* 추가될 때마다 유동적으로 */
+  grid-template-columns: auto;
+  padding: 24px;
+  gap: 24px;
+}
+[class*="group"]{
+  height: 150px;
+}
+/* small devide */
+@media (max-width: 767px) {
+  .container {
+    /* grid에서 지원하는 단위 friction(분수) */
+    /* grid-template-columns: 1fr; */
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+}
+/* medium devide */
+@media (min-width: 767px) {
+  .container {
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+/* large devide */
+@media (min-width: 767px) {
+  .container {
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(4, 25%);
+  }
+  .group1 {
+    /* 포커스는 html 구조 순서를 따른다. */
+    grid-row-start: 3;
+    grid-column-start: 2;
+    grid-column-end: span 3;
+  }
+  
+}
+.group1 {
+  background: gold;
+}
+.group2 {
+  background: pink;
+}
+.group3 {
+  background: lightgreen;
+}
+.group4 {
+  background: skyblue;
+}
+.group5 {
+  background: salmon;
+}
+.group6 {
+  background: violet;
+}
+.group7 {
+  background: aquamarine;
+}
+.group8 {
+  background: lightseagreen;
+}
+.group9 {
+  background: MediumPurple;
+}
+.group10 {
+  background: MidnightBlue;
+}
+.group11 {
+  background: Olive;
+}
+.group12 {
+  background: SandyBrown;
+}
