@@ -6,50 +6,6 @@ body {
   margin: 0;
 }
 
-.container {
-  background: silver;
-  border: 1px solid red;
-  display: grid;
-  /* 추가될 때마다 유동적으로 */
-  grid-template-columns: auto;
-  padding: 24px;
-  gap: 24px;
-}
-[class*="group"]{
-  height: 150px;
-}
-/* small devide */
-@media (max-width: 767px) {
-  .container {
-    /* grid에서 지원하는 단위 friction(분수) */
-    /* grid-template-columns: 1fr; */
-    grid-template-columns: repeat(1, 1fr);
-  }
-  
-}
-/* medium devide */
-@media (min-width: 767px) {
-  .container {
-    /* grid-template-columns: 1fr 1fr; */
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-}
-/* large devide */
-@media (min-width: 767px) {
-  .container {
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    /* grid-template-columns: repeat(4, 1fr); */
-    grid-template-columns: repeat(4, 25%);
-  }
-  .group1 {
-    /* 포커스는 html 구조 순서를 따른다. */
-    grid-row-start: 3;
-    grid-column-start: 2;
-    grid-column-end: span 3;
-  }
-  
-}
 .group1 {
   background: gold;
 }
@@ -85,4 +41,51 @@ body {
 }
 .group12 {
   background: SandyBrown;
+}
+
+/* 공통 레이아웃 */
+.container {
+  border: 5px solid black;
+  margin: 50px;
+  display: grid;
+  gap: 24px;
+  grid-template-rows: repeat(3, 200px);
+}
+
+.group1 {
+  grid-area: box1;
+}
+.group2 {
+  grid-area: box2;
+}
+.group3 {
+  grid-area: box3;
+}
+.group4 {
+  grid-area: box4;
+}
+.group5 {
+  grid-area: box5;
+}
+
+/* 모바일 레이아웃 */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "box1 box2"
+      "box1 box3"
+      "box4 box5";
+  }
+}
+
+/* 데스크탑 레이아웃 */
+@media (min-width: 769px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+      "box1 box1 box1 box1 box5 box5 box5 box5 box5 box4 box4 box4"
+      "box1 box1 box1 box1  .   box3 box3 box3 box3 box3 box3 box3";
+  }
 }

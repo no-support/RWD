@@ -32,3 +32,33 @@ video {
   width: 100%;
   height: auto;
 }
+
+/* 반응형 Iframe - 1. position과 padding 기술 2. aspect-ratio */
+.iframeWrapper {
+  position: relative;
+  width: 100%;
+  height: 0 !important;
+}
+
+/* aspect-ratio는 ie11에서 사용 불가 */
+.iframeRatio-16-9 {
+  /* padding의 %: 부모의 너비 기준 */
+  padding-top: 56.25%;
+  aspect-ratio: 16/9;
+}
+.iframeRatio-21-9 {
+  padding-top: 42.857142857142855%;
+  aspect-ratio: 21/9;
+}
+.iframeRatio-4-3 {
+  padding-top: 75%;
+  aspect-ratio: 4/3;
+}
+
+.iframeWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

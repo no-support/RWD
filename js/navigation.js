@@ -4,7 +4,7 @@
     // ESC만으로 그리드를 켜고 끄는 기능을 사용하면, 다른 곳에서 ESC를 사용할 수 없는 문제. Shift + ESC로 문제 완화
     if (event.shiftKey && (event.key === 'Escape' || event.keyCode === 27)) {
       document.body.classList.toggle('gridShow');
-    };
+    }
   });
 
   // 모바일 메뉴열기 버튼 누를 때 is--active 토글 및 aria-label 변경
@@ -16,7 +16,7 @@
   var lastItem = menu.querySelector('.menu__list li:last-child a');
   var video = document.querySelector('.news__video');
 
-  btn.addEventListener('click', function (e) {
+  btn.addEventListener('click', function (e) {console.log(22);
     e.preventDefault();
     btn.classList.toggle('is--active');
     if (btn.classList.contains('is--active')) {
@@ -97,13 +97,9 @@
 
   // 메뉴, 메뉴 열기 버튼이 활성화 된 상태에서 창 크기 조정 시, 활성 클래스 제거
   window.addEventListener('resize', function (e) {
-    setTimeout(() => {
-      if (btn.classList.contains('is--active')) {
-        btn.classList.remove('is--active');
-        menu.classList.remove('is--active');
-      }
-    }, "1000")
-
-    
+    if (btn.classList.contains('is--active')) {
+      btn.classList.remove('is--active');
+      menu.classList.remove('is--active');
+    }
   });
 })();
